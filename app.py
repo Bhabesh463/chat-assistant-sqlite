@@ -42,7 +42,7 @@ def parse_query(user_input):
         return f"SELECT SUM(Salary) FROM Employees WHERE Department = ?", (dept,)
 
     return None, None
-
+# API for post method
 @app.route("/chat", methods=["POST"])
 def chat():
     user_input = request.json.get("query", "")
