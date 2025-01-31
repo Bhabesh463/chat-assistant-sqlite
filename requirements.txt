@@ -1,6 +1,4 @@
-flask
-sqlite3
-re
-nltk
-spacy
-requests
+flask==3.0.0
+nltk==3.8.1
+spacy==3.7.2
+requests==2.31.0
