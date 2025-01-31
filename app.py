@@ -47,10 +47,6 @@ def parse_query(user_input):
 @app.route("/")
 def home():
     return render_template("index.html")  # ✅ Serve the HTML page
-@app.route("/chat", methods=["POST"])
-def chat():
-    user_input = request.json.get("query", "")
-    return jsonify({"response": f"You asked: {user_input}"})  # ✅ Test response
 
 
 # API for post method
