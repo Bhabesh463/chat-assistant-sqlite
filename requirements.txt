@@ -1,4 +1,6 @@
 flask==3.0.0
+sqlite3      
+re  
 nltk==3.8.1
 spacy==3.7.2
 requests==2.31.0
