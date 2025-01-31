@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 import re
 import os
@@ -43,6 +43,16 @@ def parse_query(user_input):
         return f"SELECT SUM(Salary) FROM Employees WHERE Department = ?", (dept,)
 
     return None, None
+
+@app.route("/")
+def home():
+    return render_template("index.html")  # ✅ Serve the HTML page
+@app.route("/chat", methods=["POST"])
+def chat():
+    user_input = request.json.get("query", "")
+    return jsonify({"response": f"You asked: {user_input}"})  # ✅ Test response
+
+
 # API for post method
 @app.route("/chat", methods=["POST"])
 def chat():
